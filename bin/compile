@@ -68,7 +68,7 @@ if [ ! "$(which pdflatex)" ]; then
     ./install-tl --repository="$TEXLIVE_REPOSITORY" --profile="$PROF"
 fi
 
-build-step "Updating TeX Live..."
+build-step "Updating TeX Live... testing"
 
 tlmgr option repository "$TEXLIVE_REPOSITORY"
 tlmgr update --self
