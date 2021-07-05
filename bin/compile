@@ -35,6 +35,7 @@ source "$BIN_DIR/utils"
 
 # Prepare the various paths
 mkdir -p "$TEXLIVE_HOME"
+echo "Home dir is $TEXLIVE_HOME"
 mkdir -p "$TEXLIVE_CACHE"
 mkdir -p "$(dirname "$PROFILE_D")"
 
@@ -48,8 +49,6 @@ if [ ! -f "$TEXLIVE_HOME/install-tl" ]; then
     echo "Using $TEXLIVE_INSTALLER_URL"
     curl "$TEXLIVE_INSTALLER_URL" -L -s -o - | tar --strip-components=1 -xzf - -C "$TEXLIVE_HOME"
 fi
-
-build-step "Checking directory"
 
 if [ ! "$(which pdflatex)" ]; then
     build-step "Installing TeX Live..."
@@ -70,7 +69,7 @@ if [ ! "$(which pdflatex)" ]; then
     ./install-tl --repository="$TEXLIVE_REPOSITORY" --profile="$PROF"
 fi
 
-build-step "Updating TeX Live... testing"
+build-step "Updating TeX Live..."
 
 tlmgr option repository "$TEXLIVE_REPOSITORY"
 tlmgr update --self
