@@ -35,7 +35,12 @@ source "$BIN_DIR/utils"
 
 # Prepare the various paths
 mkdir -p "$TEXLIVE_HOME"
-echo "Home dir is $TEXLIVE_HOME"
+echo "TEXLIVE_HOME is $TEXLIVE_HOME"
+echo "BUILD_DIR is $BUILD_DIR"
+echo "CACHE_DIR is $CACHE_DIR"
+echo "TEXLIVE_REPOSITORY is $TEXLIVE_REPOSITORY"
+echo "BIN_DIR is $BIN_DIR"
+
 mkdir -p "$TEXLIVE_CACHE"
 mkdir -p "$(dirname "$PROFILE_D")"
 
